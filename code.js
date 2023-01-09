@@ -1,8 +1,7 @@
 /**
  * @author: Gustavo Medeiros
- * This code just demonstrates how Caesar Cipher works.
+ * This function applies a Caesar cipher to a message.
  */
-
 function cifraMensagem(mensagem, movimentos) {
   const mensagemCifrada = mensagem.split('').map(caractere => {
     const codigoCaractere = caractere.charCodeAt(0);
@@ -12,6 +11,24 @@ function cifraMensagem(mensagem, movimentos) {
   return mensagemCifrada.join('')
 }
 
-const mensagemSecreta = 'Lorem ipsum';
+/**
+ * This one applies the reverse of the Caesar cipher,
+ * intended to decrypt a message.
+ */
+function decifraMensagem(mensagem, movimentos) {
+  const mensagemCifrada = mensagem.split('').map(caractere => {
+    const codigoCaractere = caractere.charCodeAt(0);
+    return String.fromCharCode(codigoCaractere - movimentos)
+  })
 
-console.log(cifraMensagem(mensagemSecreta, 3))
+  return mensagemCifrada.join('')
+}
+
+const mensagemOriginal = 'Lorem ipsum';
+
+const mensagemCifrada = cifraMensagem(mensagemOriginal, 3);
+const messagemDecifrada = decifraMensagem(mensagemCifrada, 3);
+
+console.log(mensagemOriginal);
+console.log(mensagemCifrada);
+console.log(messagemDecifrada);
