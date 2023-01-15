@@ -1,0 +1,21 @@
+{
+  "name": "alura-courses",
+  "version": "1.0.0",
+  "description": "Just a repo for all the code-related stuff from the Alura courses that I go through ¯\\\\\\_(ツ)_/¯",
+  "main": "code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo-medeiros18/alura-courses.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gustavo-medeiros18/alura-courses/issues"
+  },
+  "homepage": "https://github.com/gustavo-medeiros18/alura-courses#readme"
+}
