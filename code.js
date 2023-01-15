@@ -1,34 +1,22 @@
 /**
  * @author: Gustavo Medeiros
- * This function applies a Caesar cipher to a message.
+ * This code shows an example of using the crypto module
+ * to generate a hash from a string.
  */
-function cifraMensagem(mensagem, movimentos) {
-  const mensagemCifrada = mensagem.split('').map(caractere => {
-    const codigoCaractere = caractere.charCodeAt(0);
-    return String.fromCharCode(codigoCaractere + movimentos)
-  })
-
-  return mensagemCifrada.join('')
-}
+import { createHash } from 'crypto';
 
 /**
- * This one applies the reverse of the Caesar cipher,
- * intended to decrypt a message.
+ * Generates a hash based on sha256
+ * @param message
+ * @returns message hash based on sha256
  */
-function decifraMensagem(mensagem, movimentos) {
-  const mensagemCifrada = mensagem.split('').map(caractere => {
-    const codigoCaractere = caractere.charCodeAt(0);
-    return String.fromCharCode(codigoCaractere - movimentos)
-  })
+function generateHash(message) {
+  const hashResult = createHash('sha256').update(message).digest('hex');
 
-  return mensagemCifrada.join('')
+  return hashResult;
 }
 
-const mensagemOriginal = 'Lorem ipsum';
+const message = 'Hello World';
+const hash = generateHash(message);
 
-const mensagemCifrada = cifraMensagem(mensagemOriginal, 3);
-const messagemDecifrada = decifraMensagem(mensagemCifrada, 3);
-
-console.log(mensagemOriginal);
-console.log(mensagemCifrada);
-console.log(messagemDecifrada);
+console.log(hash);
