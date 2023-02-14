@@ -16,7 +16,4 @@ function generateHash(message) {
   return hashResult;
 }
 
-const message = 'Hello World';
-const hash = generateHash(message);
-
-console.log(hash);
+export default generateHash;
